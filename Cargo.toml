@@ -4,6 +4,7 @@ version = "0.1.0"
 edition = "2024"
 
 [dependencies]
+bitfield-struct = "0.12.1"
 bluest = "0.6.9"
 btleplug = "0.11.8"
 eyre = "0.6.12"
