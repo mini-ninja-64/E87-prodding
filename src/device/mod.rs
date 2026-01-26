@@ -1,5 +1,6 @@
 use crate::ble_controller::BleControllerError;
 
+pub mod command;
 pub mod common;
 pub mod e87;
 pub enum BleDevice<'a> {

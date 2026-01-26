@@ -24,10 +24,10 @@ async fn main() -> Result<(), BleControllerError> {
     let device = controller.scan_for_supported_devices().await?;
     match device {
         UnconnectedDevice::E87(device) => {
-            let device = device.connect().await?;
+            let mut device = device.connect().await?;
 
-            println!("Requesting");
             device.request_device_info().await?;
+            // device.request_image_size().await?;
 
             println!("Disconnecting");
             device.disconnect().await?;
