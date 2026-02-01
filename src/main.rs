@@ -26,7 +26,10 @@ async fn main() -> Result<(), BleControllerError> {
         UnconnectedDevice::E87(device) => {
             let mut device = device.connect().await?;
 
-            device.request_device_info().await?;
+            device.request_bind().await?;
+            println!("{:?}", device.request_device_info().await?);
+            device.request_unbind().await?;
+            // device.request_device_info().await?;
             // device.request_image_size().await?;
 
             println!("Disconnecting");
